@@ -39,10 +39,9 @@ class mAstar(object):
         self.path=[]
         self.panel = "Img"
         self.img=None
-        self.graph={}
+        self.graph = {}
         self.start=None
         self.end=None
-        self.graph=None
     
     def refresh(self):
         self.show()
@@ -92,7 +91,7 @@ class mAstar(object):
                 else:
                     tnode.status= NODE_Obstacle
                     # print('obstacle',tnode)
-                if x not in self.graph:
+                if x not in self.graph.keys():
                     self.graph[x]={}    
                 self.graph[x][y]=tnode
         print(cv2.getTickCount()-t)
@@ -172,5 +171,5 @@ class mAstar(object):
 if __name__ == "__main__":
 
     pf=mAstar()
-    pf.load_img("11002.jpg")
+    pf.load_img("test2.jpg")
     pf.show()
